@@ -34,9 +34,6 @@ Route::post('/create/{project}', function ($project) {
     echo $ssh->exec('cd /var/www/html/ && git commit -m "from-g-web-server"');
     echo $ssh->exec('cd /var/www/html/ && git push origin');
 
-    // Create subdomain virtualhost and install SSL
-    $ssh->exec('cd /var/www/html && cp subdomain.conf /etc/apache2/sites-available/' . $project . '.g-web.agency.conf');
-    $ssh->exec('cd /var/www/html && sed -i "s/subdomain/' . $project . '/g" /etc/apache2/sites-available/' . $project . '.g-web.agency.conf');
-    $ssh->exec('cd /var/www/html && a2ensite ' . $project . '.g-web.agency.conf');
-    $ssh->exec('cd /var/www/html && certbot --apache -d ' . $project . '.g-web.agency');
+    // Create virtualhost and install SSL
+    $ssh->exec('cd /var/www/html/ && virtualhost create ' . $project . '.g-web.agency /var/www/html/' . $project . '.g-web.agency');
 });
