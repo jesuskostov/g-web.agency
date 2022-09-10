@@ -14,6 +14,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 // Get all users
-Route::post('/users', function () {
-    return '123';
+Route::post('/create/{project}', function ($project) {
+    return $project;
 });
