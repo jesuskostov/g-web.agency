@@ -24,6 +24,11 @@ Route::post('/create/{project}', function ($project) {
     if (!$ssh->login('root', $key)) {
         exit('Login Failed');
     }
+
+    // Create project
+    $ssh->exec('cd /var/www/html && mkdir ' . $project . '.g-web.agency');
+    // Create index file inside
+    $ssh->exec('cd /var/www/html/' . $project . '.g-web.agency && echo "<?php echo \'Hello World!\'; ?>" > index.php');
     // Git status
     echo $ssh->exec('cd /var/www/html/ && git status && git add .');
     echo $ssh->exec('cd /var/www/html/ && git commit -m "from-g-web-server"');
