@@ -37,5 +37,5 @@ Route::post('/create/{project}', function ($project) {
     // Create virtualhost
     $ssh->exec('cd /var/www/html/ && virtualhost create ' . $project . '.g-web.agency /var/www/html/' . $project . '.g-web.agency');
     // certbot --apache -d example.domain.com and choose 2
-    $ssh->exec('cd /var/www/html/ && certbot --apache -d ' . $project . '.g-web.agency --redirect');
+    echo $ssh->exec('cd /var/www/html/ && certbot --apache -d ' . $project . '.g-web.agency --redirect');
 });
