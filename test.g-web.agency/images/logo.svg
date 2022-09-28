@@ -1,0 +1,15 @@
+<svg id="Group_186" data-name="Group 186" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="182" height="32.067" viewBox="0 0 176 32.067">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#ff973e"/>
+      <stop offset="1" stop-color="#ff6565"/>
+    </linearGradient>
+  </defs>
+  <g id="Group_100" data-name="Group 100" transform="translate(-138 -34.466)">
+    <text id="Avis_Vidéos_" data-name="Avis Vidéos®" transform="translate(179 60.534)" font-size="24" font-family="Helvetica" letter-spacing="-0.03em"><tspan x="0" y="0">Avis Vidéos®</tspan></text>
+  </g>
+  <g id="Component_14_1" data-name="Component 14 – 1">
+    <path id="Path_46" data-name="Path 46" d="M578.55,593.017a8.3,8.3,0,0,0-11.273-3.266l-6.177,3.4a8.3,8.3,0,0,0-15.645,3.867v6.808l15.334,8.446,14.5-7.984A8.3,8.3,0,0,0,578.55,593.017Z" transform="translate(-545.454 -588.722)" fill="url(#linear-gradient)"/>
+    <path id="Path_47" data-name="Path 47" d="M545.454,601.928v13.734l12.467-6.867Z" transform="translate(-545.454 -583.661)" fill="#ff2614"/>
+  </g>
+</svg>

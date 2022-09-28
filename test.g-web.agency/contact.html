@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>
+      Document
+    </title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet" />
+    <link href="https://vjs.zencdn.net/7.19.2/video-js.css" rel="stylesheet"/>
+
+    <style>
+      .vjs-big-play-button {
+        top: 50% !important;
+        left: 50% !important;
+        transform: translate(-50%, -50%) !important;
+        border-radius: 9999px !important;
+        width: 79px !important;
+        height: 79px !important;
+        background-color: rgba(0,0,0,0.56) !important;
+        border: 0 !important;
+      }
+      .vjs-icon-placeholder:before {
+        position: relative !important;
+        font-size: 50px;
+        top: 5px !important;
+      }
+      .vjs-poster {
+        background-size: cover;
+      }
+
+    </style>
+
+    
+      <script defer src="/runtime.js?e22c2cc2118e0f19e233"></script><script defer src="/vendors-node_modules_bootstrap_dist_js_bootstrap_esm_js-node_modules_core-js_modules_es_array-cdad27.js?e22c2cc2118e0f19e233"></script><script defer src="/app.js?e22c2cc2118e0f19e233"></script><link href="/vendors-node_modules_bootstrap_dist_js_bootstrap_esm_js-node_modules_core-js_modules_es_array-cdad27.css?e22c2cc2118e0f19e233" rel="stylesheet"><link href="/app.css?e22c2cc2118e0f19e233" rel="stylesheet"></head>
+  <body>
+    <div class="container">
+              <header class="header d-flex justify-content-between">
+  <img src="/images/logo.svg" class="logo" alt="logo" />
+  <div class="d-flex align-items-center">
+    <ul class="nav-option">
+      <li>
+        <a href="#">Accès Particulier</a>
+      </li>
+      <li>
+        <a href="#">Accès Entreprise</a>
+      </li>
+    </ul>
+  </div>
+</header>
+          </div>
+
+    <div class="content">
+      	<div class="header-banner">
+		<div class="container">
+			<div class="d-flex align-items-center">
+				<div>
+                    <h2 class="h2 mb-1 fw-bold">Contactez-nous pour faire exploser vos ventes !</h2>
+					<p class="h6 text-muted">Partagez vos émotions et gagnez des chèques-cadeaux !</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 mx-auto">
+				<div class="row">
+					<div class="col-md-12 col-lg-6 mb-4">
+                        <p class="fw-bold mb-2">Votre nom de contact :</p>
+                        <input type="text" class="form-control review-input" placeholder="Écrivez votre nom de contact"/>
+					</div>
+					<div class="col-md-12 col-lg-6 mb-4">
+                        <p class="fw-bold mb-2">Votre site e-commerce :</p>
+                        <input type="text" class="form-control review-input" placeholder="Écrivez ici l’URL de votre site e-commerce"/>
+					</div>
+					<div class="col-md-12 col-lg-12 mb-4">
+                        <p class="fw-bold mb-2">Votre email de contact :</p>
+                        <input type="text" class="form-control review-input" placeholder="Écrivez votre email de contact"/>
+					</div>
+					<div class="col-md-12 mb-5">
+                        <p class="fw-bold mb-2">Votre message :</p>
+                        <textarea class="w-100 form-control review-input textarea" placeholder="Écrivez en quelques mots votre souhait ultime… et aussi pourquoi vous nous contactez. ;)"></textarea>
+					</div>
+					<div>
+                        <button class="primary-btn">Envoyer</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+    </div>
+
+          <footer class="pb-4">
+  <div class="container">
+    <hr />
+    <div class="row mt-5">
+      <div class="col-md-3">
+        <img class="footer-logo" src="/images/logo.svg" alt="logo" />
+        <p>
+          © Tous droits réservés.
+        </p>
+      </div>
+      <div class="col-md-5">
+        <p class="text-muted">
+          Avis Vidéos® est un service expert vous proposant les avis vidéos
+          réels des clients de vos entreprises préférées. Vous souhaitez acheter
+          en toute confiance sur Internet ? <br />
+          Découvrez ce que les clients vous disent en toute transparence !
+        </p>
+      </div>
+      <div class="col-md-1 offset-md-1">
+        <ul>
+          <li>Facebook</li>
+          <li>Instagram</li>
+          <li>TikTok</li>
+          <li>Twitter</li>
+        </ul>
+      </div>
+      <div class="col-md-2">
+        <ul class="ps-4">
+          <li>CGUV</li>
+          <li>Mentions Légales</li>
+          <li>Politique des Cookies</li>
+          <li>Politique de Confidentialité</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+    
+    
+    
+          
+      <script src="https://vjs.zencdn.net/7.19.2/video.min.js"></script>
+      <script>
+        // Parallax
+        
+
+
+        // Counter
+        var counters = document.getElementsByClassName("count")
+        var countersQuantity = counters.length;
+        var counter = [];
+
+        for (i = 0; i < countersQuantity; i++) {
+            counter[i] = parseInt(counters[i].innerHTML);
+        }
+
+        var count = function(start, value, id) {
+            var localStart = start;
+            setInterval(function() {
+            if (localStart < value) {
+                localStart++;
+                counters[id].innerHTML = localStart;
+            }
+            }, 40);
+        }
+
+        for (j = 0; j < countersQuantity; j++) {
+            count(0, counter[j], j);
+        }
+
+      </script>
+      </body>
+</html>

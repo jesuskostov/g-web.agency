@@ -1,0 +1,15 @@
+{
+  "entrypoints": {
+    "app": {
+      "js": [
+        "/runtime.js",
+        "/vendors-node_modules_bootstrap_dist_js_bootstrap_esm_js-node_modules_core-js_modules_es_array-cdad27.js",
+        "/app.js"
+      ],
+      "css": [
+        "/vendors-node_modules_bootstrap_dist_js_bootstrap_esm_js-node_modules_core-js_modules_es_array-cdad27.css",
+        "/app.css"
+      ]
+    }
+  }
+}

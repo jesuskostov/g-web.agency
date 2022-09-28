@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>
+      Document
+    </title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet" />
+    <link href="https://vjs.zencdn.net/7.19.2/video-js.css" rel="stylesheet"/>
+
+    <style>
+      .vjs-big-play-button {
+        top: 50% !important;
+        left: 50% !important;
+        transform: translate(-50%, -50%) !important;
+        border-radius: 9999px !important;
+        width: 79px !important;
+        height: 79px !important;
+        background-color: rgba(0,0,0,0.56) !important;
+        border: 0 !important;
+      }
+      .vjs-icon-placeholder:before {
+        position: relative !important;
+        font-size: 50px;
+        top: 5px !important;
+      }
+      .vjs-poster {
+        background-size: cover;
+      }
+
+    </style>
+
+    
+      <script defer src="/runtime.js?e22c2cc2118e0f19e233"></script><script defer src="/vendors-node_modules_bootstrap_dist_js_bootstrap_esm_js-node_modules_core-js_modules_es_array-cdad27.js?e22c2cc2118e0f19e233"></script><script defer src="/app.js?e22c2cc2118e0f19e233"></script><link href="/vendors-node_modules_bootstrap_dist_js_bootstrap_esm_js-node_modules_core-js_modules_es_array-cdad27.css?e22c2cc2118e0f19e233" rel="stylesheet"><link href="/app.css?e22c2cc2118e0f19e233" rel="stylesheet"></head>
+  <body>
+    <div class="container">
+              <header class="header d-flex justify-content-between">
+  <img src="/images/logo.svg" class="logo" alt="logo" />
+  <div class="d-flex align-items-center">
+    <ul class="nav-option">
+      <li>
+        <a href="#">Accès Particulier</a>
+      </li>
+      <li>
+        <a href="#">Accès Entreprise</a>
+      </li>
+    </ul>
+  </div>
+</header>
+          </div>
+
+    <div class="content">
+      <div class="header-banner">
+	<div class="container">
+		<div class="d-flex align-items-center">
+			<div class="company-image me-4 mb-4 mb-md-0">
+				<img src="./images/company-1.png" alt="company image"/>
+			</div>
+			<div>
+                <h2 class="h2 mb-1 fw-bold">Votre Avis Vidéo</p>
+                <p class="h6 text-muted">Partagez vos émotions et gagnez des chèques-cadeaux !</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <p class="fw-bold mb-1">Votre ressenti bienveillant :</p>
+            <div class="me-0 mb-3 me-md-3 mb-4">
+                                    <img src="./images/heart.svg" alt="heart"/>
+                                    <img src="./images/heart.svg" alt="heart"/>
+                                    <img src="./images/heart.svg" alt="heart"/>
+                                    <img src="./images/heart.svg" alt="heart"/>
+                                    <img src="./images/heart.svg" alt="heart"/>
+                            </div>
+            <div class="row">
+                <div class="col-md-12 col-lg-6 mb-4">
+                    <p class="fw-bold mb-2">Votre prénom<span class="text-danger">*</span> :</p>
+                    <input type="text" class="form-control review-input" />
+                </div>
+                <div class="col-md-12 col-lg-6 mb-4">
+                    <p class="fw-bold mb-2">Votre ville (facultatif)</p>
+                    <input type="text" class="form-control review-input"/>
+                </div>
+                <div class="col-md-12 col-lg-6 mb-4">
+                    <p class="fw-bold mb-2">Votre âge<span class="text-danger">*</span> :</p>
+                    <input type="text" class="form-control review-input"/>
+                </div>
+                <div class="col-md-12 col-lg-6 mb-4">
+                    <p class="fw-bold mb-2">Votre email<span class="text-danger">*</span> :</p>
+                    <input type="text" class="form-control review-input"/>
+                </div>
+                <div class="col-md-12 mb-5">
+                    <p class="fw-bold mb-2">En quelques mots :</p>
+                    <textarea class="w-100 form-control review-input textarea"></textarea>
+                </div>
+                <div>
+                    <button class="primary-btn">J’envoie mon Avis Vidéo !</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-5 offset-md-1">
+            <p class="fw-bold">Téléchargez votre vidéo :</p>
+            <img class="img-fluid mb-4" src="./images/review-video-placeholder.png" alt="company image"/>
+            <p class="fw-bold mb-2">Fonctionnement :</p>
+            <p class="small text-muted">
+                100% des avis sont modérés par notre équipe bienveillante.<br>
+                Les avis mensongers, vulgaires ou toxiques ne sont pas retenus.<br>
+                Les avis validés vous font gagner un chèque-cadeau de 10 €.<br>
+                Les Avis Suprêmes™ vous font gagner un chèque-cadeau de 25 €.<br>
+                Simple, efficace et cool ! 🎁
+            </p>
+        </div>
+    </div>
+</div>
+
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary mt-5" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+	Launch static backdrop modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered modal-md">
+		<div class="custom-modal modal-content">
+			<div class="modal-body d-flex flex-column align-items-center justify-content-center pb-5">
+                <img class="mb-3" src="./images/success.svg" alt="company image"/>
+                <div class="row">
+                    <div class="col-md-12">
+                        <p class="h4 text-center fw-bold mb-3">Votre Avis Vidéo vrai, honnête et <br> sincère a bien été envoyé !</p>
+                        <p class="text-muted mb-5">
+                            Durée de modération maximum : 72h. <br>
+                            Un email vous en précisera le résultat. <br>
+                            En croisant les doigts pour le Suprême ! 🤗
+                        </p>
+                    </div>
+                </div>
+                <button type="button" class="primary-btn" data-bs-dismiss="modal">Voir tous les Avis</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+	
+    </div>
+
+          <footer class="pb-4">
+  <div class="container">
+    <hr />
+    <div class="row mt-5">
+      <div class="col-md-3">
+        <img class="footer-logo" src="/images/logo.svg" alt="logo" />
+        <p>
+          © Tous droits réservés.
+        </p>
+      </div>
+      <div class="col-md-5">
+        <p class="text-muted">
+          Avis Vidéos® est un service expert vous proposant les avis vidéos
+          réels des clients de vos entreprises préférées. Vous souhaitez acheter
+          en toute confiance sur Internet ? <br />
+          Découvrez ce que les clients vous disent en toute transparence !
+        </p>
+      </div>
+      <div class="col-md-1 offset-md-1">
+        <ul>
+          <li>Facebook</li>
+          <li>Instagram</li>
+          <li>TikTok</li>
+          <li>Twitter</li>
+        </ul>
+      </div>
+      <div class="col-md-2">
+        <ul class="ps-4">
+          <li>CGUV</li>
+          <li>Mentions Légales</li>
+          <li>Politique des Cookies</li>
+          <li>Politique de Confidentialité</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+    
+    
+    
+          
+      <script src="https://vjs.zencdn.net/7.19.2/video.min.js"></script>
+      <script>
+        // Parallax
+        
+
+
+        // Counter
+        var counters = document.getElementsByClassName("count")
+        var countersQuantity = counters.length;
+        var counter = [];
+
+        for (i = 0; i < countersQuantity; i++) {
+            counter[i] = parseInt(counters[i].innerHTML);
+        }
+
+        var count = function(start, value, id) {
+            var localStart = start;
+            setInterval(function() {
+            if (localStart < value) {
+                localStart++;
+                counters[id].innerHTML = localStart;
+            }
+            }, 40);
+        }
+
+        for (j = 0; j < countersQuantity; j++) {
+            count(0, counter[j], j);
+        }
+
+      </script>
+      </body>
+</html>
