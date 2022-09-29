@@ -89,7 +89,7 @@ Route::post('/deploy', function (Request $request) {
     // $ssh->exec('cd /var/www/html/ && certbot --apache -d ' . $request->domain . '.g-web.agency --redirect');
     // Split domain
     $repo = explode('/', explode('.', $request->repo)[1])[1];
-    $res = '---> <span class="text-pink-400"><a href="http://' . $request->domain . '.g-web.agency">http://' . $request->domain . '.g-web.agency</a></span><br> ---> Add this <span class="text-blue-300">https://build.g-web.agency/api/hook/' . $request->domain . '/' . $request->framework . '</span> <br> ---> to your webhooks <span class="text-pink-400 pb-6"><a href="https://github.com/' . $request->username . '/' .$repo. '/settings/hooks" target="_blank">Here</a></span>';
+    $res = '---> <span class="text-pink-400"><a href="http://' . $request->domain . '.g-web.agency">http://' . $request->domain . '.g-web.agency</a></span><br> ---> Add this <span class="text-blue-300">https://build.g-web.agency/api/hook/' . $request->domain . '/' . $request->framework . '</span> <br> ---> to your webhooks <span class="text-pink-400 underline pb-6"><a href="https://github.com/' . $request->username . '/' .$repo. '/settings/hooks" target="_blank">Here</a></span>';
     return $res;
 });
 
@@ -102,7 +102,7 @@ Route::post('/hook/{domain}/{framework}', function ($domain, $framework) {
     switch ($framework) {
     case 'static':
         $ssh->exec('cd /var/www/html/' . $domain . '.g-web.agency && git pull');
-        $ssh->exec('echo "success" > /var/www/html/test.txt');
+        $ssh->exec('echo ' . $domain . ' > /var/www/html/test.txt');
         break;
     case 'react':
         $ssh->exec('cd /var/www/html/' . $domain . '.g-web.agency && git pull && yarn install && yarn build');
