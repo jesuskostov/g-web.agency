@@ -34,7 +34,10 @@ Route::post('/install', function (Request $request) {
     
     $ssh->setTimeout(1000000);
     $ssh->exec('cd /var/www/html/ && git clone ' . $request->repo . ' ' . $request->domain . '.g-web.agency');
-    $ssh->exec('cd /var/www/html/' . $request->domain . '.g-web.agency && yarn install');
+    if ($request->framework !== 'static') {
+        $ssh->exec('cd /var/www/html/' . $request->domain . '.g-web.agency && yarn install');
+    }
+    // TODO: Add if state for static or dynamic
 });
 
 Route::post('/build', function (Request $request) {
@@ -45,6 +48,8 @@ Route::post('/build', function (Request $request) {
     // Set timeout
     $ssh->setTimeout(1000000);
     switch ($request->framework) {
+    case 'static':
+        break;
     case 'react':
         $ssh->exec('cd /var/www/html/' . $request->domain . '.g-web.agency && yarn build');
         break;
@@ -68,6 +73,9 @@ Route::post('/deploy', function (Request $request) {
     }
     $ssh->setTimeout(1000000);
     switch ($request->framework) {
+    case 'static':
+        $ssh->exec('cd /var/www/html/ && virtualhost create ' . $request->domain . '.g-web.agency /var/www/html/' . $request->domain . '.g-web.agency/');
+        break;
     case 'react':
         $ssh->exec('cd /var/www/html/ && virtualhost create ' . $request->domain . '.g-web.agency /var/www/html/' . $request->domain . '.g-web.agency/build');
         break;
@@ -92,6 +100,10 @@ Route::post('/hook/{domain}/{framework}', function ($domain, $framework) {
     }
     $ssh->setTimeout(1000000);
     switch ($framework) {
+    case 'static':
+        $ssh->exec('cd /var/www/html/' . $domain . '.g-web.agency && git pull');
+        $ssh->exec('echo "success" > /var/www/html/test.txt');
+        break;
     case 'react':
         $ssh->exec('cd /var/www/html/' . $domain . '.g-web.agency && git pull && yarn install && yarn build');
         $ssh->exec('echo "success" > /var/www/html/test.txt');
