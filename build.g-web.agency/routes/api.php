@@ -79,5 +79,31 @@ Route::post('/deploy', function (Request $request) {
         break;
     }     
     // $ssh->exec('cd /var/www/html/ && certbot --apache -d ' . $request->domain . '.g-web.agency --redirect');
-    return '---> <span class="text-pink-400"><a href="http://' . $request->domain . '.g-web.agency">http://' . $request->domain . '.g-web.agency</a></span>';
+    // Split domain
+    $repo = explode('/', explode('.', $request->repo)[1])[1];
+    $res = '---> <span class="text-pink-400"><a href="http://' . $request->domain . '.g-web.agency">http://' . $request->domain . '.g-web.agency</a></span><br> ---> Add this <span class="text-blue-300">https://build.g-web.agency/api/hook/' . $request->domain . '/' . $request->framework . '</span> <br> ---> to your webhooks <span class="text-pink-400 pb-6"><a href="https://github.com/' . $request->username . '/' .$repo. '/settings/hooks" target="_blank">Here</a></span>';
+    return $res;
+});
+
+Route::post('/hook/{domain}/{framework}', function ($domain, $framework) {
+    $ssh = new SSH2('build.g-web.agency');
+    if (!$ssh->login('root', 'jesus@zueka333')) {
+        exit('Login Failed');
+    }
+    $ssh->setTimeout(1000000);
+    switch ($framework) {
+    case 'react':
+        $ssh->exec('cd /var/www/html/' . $domain . '.g-web.agency && git pull && yarn install && yarn build');
+        $ssh->exec('echo "success" > /var/www/html/test.txt');
+        break;
+    case 'vue':
+        $ssh->exec('cd /var/www/html/' . $domain . '.g-web.agency && git pull && yarn install && yarn build');
+        $ssh->exec('echo "success" > /var/www/html/test.txt');
+        break;
+    case 'nuxt':
+        $ssh->exec('cd /var/www/html/' . $domain . '.g-web.agency && git pull && yarn install && yarn build && yarn generate');
+        $ssh->exec('echo "success" > /var/www/html/test.txt');
+        break;
+    }    
+
 });
